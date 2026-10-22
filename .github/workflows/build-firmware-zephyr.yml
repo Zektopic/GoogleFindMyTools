@@ -11,11 +11,14 @@ on:
 
 jobs:
   build-firmware-zephyr:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, manupa-hnx]
 
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+
+    - name: Configure Git safe directory
+      run: git config --global --add safe.directory '*'
 
     - name: Install cmake
       run: sudo apt update && sudo apt install -y cmake
