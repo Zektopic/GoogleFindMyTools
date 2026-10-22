@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ZephyrFirmware/**
+  workflow_dispatch:
   pull_request:
     paths:
       - ZephyrFirmware/**
